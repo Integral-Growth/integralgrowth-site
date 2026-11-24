@@ -37,61 +37,35 @@
 
     <!-- Hero -->
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Integral Growth LLC</p>
-          <h1>Growth, built into the foundation.</h1>
-          <p class="lede">At Integral Growth, we specialize in propelling businesses and organizations forward through a comprehensive suite of growth services.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Contact Us To Learn More</a>
-            <a class="btn btn-ghost" href="#services">See what we do</a>
-          </div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 520 440">
-            <defs>
-              <linearGradient id="faceL" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#2a2a31"/>
-                <stop offset="1" stop-color="#121216"/>
-              </linearGradient>
-              <linearGradient id="faceR" x1="1" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#1b1b20"/>
-                <stop offset="1" stop-color="#0b0b0d"/>
-              </linearGradient>
-              <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#7a4426"/>
-                <stop offset="1" stop-color="#3a1f12"/>
-              </linearGradient>
-              <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#8b8bf0" stop-opacity="0"/>
-                <stop offset=".5" stop-color="#8b8bf0" stop-opacity=".55"/>
-                <stop offset="1" stop-color="#8b8bf0" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <!-- slatted wall -->
-            <g opacity=".5">
-              <rect x="300" y="0" width="10" height="300" fill="#2b2b31"/>
-              <rect x="330" y="0" width="10" height="300" fill="#2b2b31"/>
-              <rect x="360" y="0" width="10" height="300" fill="#2b2b31"/>
-              <rect x="390" y="0" width="10" height="300" fill="#2b2b31"/>
-              <rect x="420" y="0" width="10" height="300" fill="#2b2b31"/>
-              <rect x="450" y="0" width="10" height="300" fill="#2b2b31"/>
-              <rect x="480" y="0" width="10" height="300" fill="#2b2b31"/>
-            </g>
-            <!-- desk -->
-            <path d="M0 300 L520 290 L520 440 L0 440 Z" fill="url(#wood)"/>
-            <path d="M0 300 L520 290" stroke="#a4643c" stroke-width="2" opacity=".7"/>
-            <!-- light streak -->
-            <path d="M60 330 L520 312 L520 322 L60 342 Z" fill="url(#glow)" opacity=".5"/>
-            <!-- pyramid -->
-            <path d="M210 70 L120 320 L230 335 Z" fill="url(#faceL)"/>
-            <path d="M210 70 L230 335 L320 312 Z" fill="url(#faceR)"/>
-            <path d="M210 70 L230 335" stroke="#8b8bf0" stroke-width="1.5" opacity=".7"/>
-            <!-- books -->
-            <rect x="360" y="270" width="150" height="22" rx="2" fill="#141417"/>
-            <rect x="370" y="250" width="130" height="20" rx="2" fill="#1d1d22"/>
-            <rect x="410" y="222" width="46" height="28" rx="6" fill="#0f0f12"/>
-          </svg>
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-grid-lines"></div>
+        <div class="hero-glow"></div>
+        <svg class="hero-tri" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="triStroke" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#a9a9ff" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#8b8bf0" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#triStroke)" stroke-linejoin="round">
+            <path d="M400 40 L760 660 H40 Z" stroke-width="1.6"/>
+            <path d="M400 130 L708 660 H92 Z" stroke-width="1.2" opacity=".75"/>
+            <path d="M400 220 L656 660 H144 Z" stroke-width="1" opacity=".55"/>
+            <path d="M400 310 L604 660 H196 Z" stroke-width=".9" opacity=".4"/>
+            <path d="M400 400 L552 660 H248 Z" stroke-width=".8" opacity=".28"/>
+            <path d="M400 40 V660" stroke-width=".8" opacity=".35"/>
+          </g>
+          <circle cx="400" cy="40" r="5" fill="#c4c4ff"/>
+          <circle cx="400" cy="40" r="18" fill="#8b8bf0" opacity=".18"/>
+        </svg>
+      </div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Integral Growth LLC</p>
+        <h1>Growth, built into the foundation.</h1>
+        <p class="lede">At Integral Growth, we specialize in propelling businesses and organizations forward through a comprehensive suite of growth services.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Contact Us To Learn More</a>
+          <a class="btn btn-ghost" href="#services">See what we do</a>
         </div>
       </div>
     </section>
