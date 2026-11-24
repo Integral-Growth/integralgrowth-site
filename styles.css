@@ -81,21 +81,39 @@ em { font-style: normal; color: var(--accent); }
     linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
   background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 70% 45%, #000 20%, transparent 75%);
-          mask-image: radial-gradient(ellipse 75% 70% at 70% 45%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 60% 45%, #000 20%, transparent 75%);
+          mask-image: radial-gradient(ellipse 75% 70% at 60% 45%, #000 20%, transparent 75%);
 }
 .hero-glow {
   position: absolute; inset: 0;
   background:
-    radial-gradient(40% 45% at 72% 30%, rgba(139,139,240,.28), transparent 70%),
+    radial-gradient(42% 48% at 62% 32%, rgba(139,139,240,.3), transparent 70%),
     radial-gradient(35% 40% at 85% 85%, rgba(164,100,60,.16), transparent 70%);
 }
 .hero-tri {
-  position: absolute; right: -4%; top: 50%; transform: translateY(-46%);
-  height: 108%; width: auto; max-width: 70%;
-  animation: rise 1.4s cubic-bezier(.2,.7,.2,1) both;
+  position: absolute; right: 12%; top: 50%; transform: translateY(-46%);
+  height: 108%; width: auto; max-width: 62%;
+  animation: rise 3.2s cubic-bezier(.16,.8,.24,1) both;
 }
-@keyframes rise { from { opacity: 0; transform: translateY(-40%); } to { opacity: 1; transform: translateY(-46%); } }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(-30%) scale(.92); }
+  to   { opacity: 1; transform: translateY(-46%) scale(1); }
+}
+/* each triangle draws itself in, outer first */
+.hero-tri .tl { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.6s cubic-bezier(.45,.05,.25,1) forwards; }
+.hero-tri .tl1 { animation-delay: .2s; }
+.hero-tri .tl2 { animation-delay: .6s; }
+.hero-tri .tl3 { animation-delay: 1s; }
+.hero-tri .tl4 { animation-delay: 1.4s; }
+.hero-tri .tl5 { animation-delay: 1.8s; }
+.hero-tri .tl6 { animation-delay: 2.2s; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+/* apex lights up last, then breathes */
+.hero-tri .apex, .hero-tri .apex-halo { transform-box: fill-box; transform-origin: center; opacity: 0; }
+.hero-tri .apex { animation: pop .8s ease-out 2.4s forwards; }
+.hero-tri .apex-halo { animation: pop .8s ease-out 2.4s forwards, pulse 3.6s ease-in-out 3.2s infinite; }
+@keyframes pop { from { opacity: 0; transform: scale(.3); } to { opacity: 1; transform: scale(1); } }
+@keyframes pulse { 0%,100% { opacity: .9; transform: scale(1); } 50% { opacity: .35; transform: scale(1.8); } }
 .hero::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 30%; z-index: -1;
   background: linear-gradient(to bottom, transparent, var(--bg));
@@ -105,7 +123,11 @@ em { font-style: normal; color: var(--accent); }
 .hero-inner .lede { max-width: 33rem; }
 .lede { font-size: 1.15rem; color: var(--muted); }
 .hero-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2rem; }
-@media (prefers-reduced-motion: reduce) { .hero-tri { animation: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-tri, .hero-tri .tl, .hero-tri .apex, .hero-tri .apex-halo { animation: none; }
+  .hero-tri .tl { stroke-dashoffset: 0; }
+  .hero-tri .apex, .hero-tri .apex-halo { opacity: 1; }
+}
 
 /* Intro */
 .intro { padding-block: clamp(3rem, 7vw, 5rem); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
