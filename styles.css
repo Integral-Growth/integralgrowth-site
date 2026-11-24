@@ -119,6 +119,12 @@ em { font-style: normal; color: var(--accent); }
   background: linear-gradient(to bottom, transparent, var(--bg));
 }
 .hero-inner { position: relative; width: 100%; }
+.hero-inner::before {
+  /* soft dark veil behind the text so the triangle lines fade where they cross it */
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  left: -6rem; top: -5rem; bottom: -5rem; width: min(56rem, calc(100% + 6rem));
+  background: radial-gradient(ellipse 62% 58% at 50% 50%, rgba(13,13,16,.92) 0%, rgba(13,13,16,.82) 50%, rgba(13,13,16,0) 88%);
+}
 .hero-inner h1 { max-width: 40rem; }
 .hero-inner .lede { max-width: 33rem; }
 .lede { font-size: 1.15rem; color: var(--muted); }
