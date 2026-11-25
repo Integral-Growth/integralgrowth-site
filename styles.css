@@ -116,8 +116,8 @@ em { font-style: normal; color: var(--accent); }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 /* apex lights up last, then breathes */
 .hero-tri .apex, .hero-tri .apex-halo { transform-box: fill-box; transform-origin: center; opacity: 0; }
-.hero-tri .apex { animation: pop .8s ease-out 2.4s forwards; }
-.hero-tri .apex-halo { animation: pop .8s ease-out 2.4s forwards, pulse 3.6s ease-in-out 3.2s infinite; }
+.hero-tri .apex { animation: pop .8s ease-out 2.7s forwards; }
+.hero-tri .apex-halo { animation: pop .8s ease-out 2.7s forwards, pulse 3.6s ease-in-out 3.5s infinite; }
 @keyframes pop { from { opacity: 0; transform: scale(.3); } to { opacity: 1; transform: scale(1); } }
 @keyframes pulse { 0%,100% { opacity: .9; transform: scale(1); } 50% { opacity: .35; transform: scale(1.8); } }
 .hero::after {
