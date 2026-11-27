@@ -135,10 +135,14 @@ em { font-style: normal; color: var(--accent); }
 .hero-inner .lede { max-width: 33rem; }
 .lede { font-size: 1.15rem; color: var(--muted); }
 .hero-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2rem; }
+@keyframes soft-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
-  .hero-tri, .hero-tri .tl, .hero-tri .apex, .hero-tri .apex-halo, .brand-mark .bm, .brand-mark .bm-apex { animation: none; }
+  /* Reduce Motion: no drawing or movement, just a slow, gentle fade-in */
+  .hero-tri .tl, .hero-tri .apex, .hero-tri .apex-halo, .brand-mark .bm, .brand-mark .bm-apex { animation: none; }
   .hero-tri .tl, .brand-mark .bm { stroke-dashoffset: 0; }
-  .hero-tri .apex, .hero-tri .apex-halo, .brand-mark .bm-apex { opacity: 1; }
+  .brand-mark .bm-apex { opacity: 1; }
+  .hero-tri { animation: soft-in 2.8s ease-out .2s both; }
+  .hero-tri .apex, .hero-tri .apex-halo { animation: soft-in 1.6s ease-out 1.8s both; }
 }
 
 /* Intro */
